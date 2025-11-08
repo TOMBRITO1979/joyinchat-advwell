@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CrWell</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    #crwell-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <% if @crwell_token.present? %>
+    <iframe 
+      id="crwell-iframe" 
+      src="https://app.crwell.pro/?token=<%= @crwell_token %>"
+      allow="camera; microphone; fullscreen; display-capture"
+    ></iframe>
+  <% else %>
+    <div class="loading">
+      <div>
+        <h2>Carregando CrWell...</h2>
+        <p>Por favor, faça logout e login novamente no Chatwoot para ativar o SSO.</p>
+        <p>Ou acesse diretamente: <a href="https://app.crwell.pro" target="_blank">app.crwell.pro</a></p>
+      </div>
+    </div>
+  <% end %>
+</body>
+</html>
