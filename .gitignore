@@ -1,0 +1,45 @@
+# Environment files with secrets
+.env
+.env.*
+!.env.example
+
+# Sensitive configuration
+*.key
+*.pem
+config/master.key
+config/*.enc
+
+# Logs and databases
+*.log
+*.sqlite3
+*.dump
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode
+.idea
+.cursor
+*.swp
+*.swo
+*.un~
+
+# Node modules and dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+public/packs*/
+public/vite*/
+public/uploads/
+storage/
+tmp/
+coverage/
+buildreports/
+
+# Local configuration
+.claude/settings.local.json
+CLAUDE.local.md
+*.local
